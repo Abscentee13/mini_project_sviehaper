@@ -271,12 +271,7 @@ function createUserDetailsHtml(userId)
     //let userData = JSON.parse(user);
 
     let user = usersList[userId];
-    let userDataFieldHtml = getStruct(usersList[userId]);
-    for (const userDataFieldHtmlElement of userDataFieldHtml)
-    {
-        document.write(userDataFieldHtmlElement);
-    }
-
+    let userDataFieldHtml = getStructToHtml(usersList[userId], []);
 
     let detailsWindow = window.open();
     let htmlText = '<!doctype html>\n' +
@@ -286,37 +281,34 @@ function createUserDetailsHtml(userId)
         '    <meta name="viewport"\n' +
         '          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">\n' +
         '    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n' +
-        '    <title>' + 'Details of ' + user.id + '</title>\n' +
+        '    <title>' + user.name + '</title>\n' +
         '    <link rel="stylesheet" href="styles/main.css">\n' +
         '</head>\n' +
         '<body class="page">\n' +
-        'Details of ' + user.name +
-        userDataFieldHtml.join() +
+        '<div class="output_user_record_block-user_data_header"> Details of ' + user.name + '</div>' +
+        userDataFieldHtml.join("") +
         '</body>' +
         '</html>';
     detailsWindow.document.write(htmlText);
 
 }
 
-function getStruct(obj) {
-    let arrayOfDataField = [];
-    let divCode = "";
+function getStructToHtml(obj, arrayOfDataField) {
+    let divCode="";
     for (const prop of Object.getOwnPropertyNames(obj))
     {
 
-        if (typeof (obj[prop]) === "string")
+        if (typeof (obj[prop]) === "string" || typeof (obj[prop]) === "number")
         {
-            divCode += '<div class="output_user_record_block-user-data">' + prop + ' - ' + obj[prop] + '</div>';
+            divCode = '<div class="output_user_record_block-user_data_field">' + prop + ' - ' + obj[prop] + '</div>';
             arrayOfDataField.push(divCode);
             console.log(divCode);
-            //divCode = "";
         }
        else
         {
-            arrayOfDataField.push(prop + '<br>');
-            getStruct(obj[prop]);
+            arrayOfDataField.push('<div class="output_user_record_block-user_data_header">' + prop + '</div>');
+            getStructToHtml(obj[prop], arrayOfDataField);
         }
     }
-
     return arrayOfDataField;
 }

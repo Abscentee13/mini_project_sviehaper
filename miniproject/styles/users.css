@@ -28,10 +28,10 @@
 }
 
 
-.output_user_record_block-user-data{
-    width: 75%;
-    margin: 2px 2px 2px 32px ;
-    padding: 0px 0px 0px 5px ;
+.output_user_record_block-user_data_field{
+    width: 50%;
+    margin: 2px 2px 2px 42px ;
+    padding: 0px 0px 0px 15px ;
     border-left-style: double;
     border-left-width: medium;
     border-bottom-style: double;
@@ -43,5 +43,22 @@
 
     background: bisque;
 
-    font-size: 15px;
+    font-size: 18px;
+}
+.output_user_record_block-user_data_header{
+    width: 55%;
+    margin: 2px 2px 2px 32px ;
+    padding: 0px 0px 0px 5px ;
+    border-left-style: double;
+    border-left-width: medium;
+    border-bottom-style: double;
+    border-bottom-width: medium;
+    display: flex;
+    justify-content: left;
+    align-items: self-start;
+    flex-direction: column;
+    background-color: #889988;
+
+    font-style: oblique;
+    font-size: 24px;
 }
