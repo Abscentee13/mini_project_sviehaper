@@ -13,7 +13,6 @@
     flex-direction: row;
 
     background: linear-gradient(-45deg, #556655, bisque);
-
 }
 
 .button_user_detail {
@@ -26,4 +25,23 @@
 
 .button_user_detail:hover {
     opacity: 0.6;
+}
+
+
+.output_user_record_block-user-data{
+    width: 75%;
+    margin: 2px 2px 2px 32px ;
+    padding: 0px 0px 0px 5px ;
+    border-left-style: double;
+    border-left-width: medium;
+    border-bottom-style: double;
+    border-bottom-width: medium;
+    display: flex;
+    justify-content: left;
+    align-items: self-start;
+    flex-direction: column;
+
+    background: bisque;
+
+    font-size: 15px;
 }

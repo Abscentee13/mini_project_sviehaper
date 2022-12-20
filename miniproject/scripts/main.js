@@ -13,13 +13,13 @@ function printUsersHeader(usersData)
     {
         document.write(
             '<div class="output_user_header_block">' + user.id + '. ' + user.name +
-            '<input type="button" class="button_user_detail" onclick="createUserDetailsHtml(' + user.id + ')" value=&#10150>' +
+            '<input type="button" class="button_user_detail" '+
+            //
+            'onclick="createUserDetailsHtml(' + user.id + ')" value=&#10150>' +
             '</div>');
     }
 
 }
-
-
 
 function getUsersFromJsonPlaceholder(path)
 {
@@ -268,8 +268,17 @@ function getUsersFromLocal() {
 
 function createUserDetailsHtml(userId)
 {
-    let detailsWindow = window.open();
+    //let userData = JSON.parse(user);
 
+    let user = usersList[userId];
+    let userDataFieldHtml = getStruct(usersList[userId]);
+    for (const userDataFieldHtmlElement of userDataFieldHtml)
+    {
+        document.write(userDataFieldHtmlElement);
+    }
+
+
+    let detailsWindow = window.open();
     let htmlText = '<!doctype html>\n' +
         '<html>\n' +
         '<head>\n' +
@@ -277,15 +286,37 @@ function createUserDetailsHtml(userId)
         '    <meta name="viewport"\n' +
         '          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">\n' +
         '    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n' +
-        '    <title>' + 'Details of ' + usersList[userId].id + '</title>\n' +
+        '    <title>' + 'Details of ' + user.id + '</title>\n' +
         '    <link rel="stylesheet" href="styles/main.css">\n' +
         '</head>\n' +
         '<body class="page">\n' +
-        'Details of ' + usersList[userId].id +
-        '        <script src="scripts/main.js">\n' +
-        '        </script>\n' +
-        '</body>\n' +
+        'Details of ' + user.name +
+        userDataFieldHtml.join() +
+        '</body>' +
         '</html>';
     detailsWindow.document.write(htmlText);
 
+}
+
+function getStruct(obj) {
+    let arrayOfDataField = [];
+    let divCode = "";
+    for (const prop of Object.getOwnPropertyNames(obj))
+    {
+
+        if (typeof (obj[prop]) === "string")
+        {
+            divCode += '<div class="output_user_record_block-user-data">' + prop + ' - ' + obj[prop] + '</div>';
+            arrayOfDataField.push(divCode);
+            console.log(divCode);
+            //divCode = "";
+        }
+       else
+        {
+            arrayOfDataField.push(prop + '<br>');
+            getStruct(obj[prop]);
+        }
+    }
+
+    return arrayOfDataField;
 }
