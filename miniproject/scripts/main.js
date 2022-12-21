@@ -1,33 +1,60 @@
 
 
-let usersList = getUsersFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users');
 
-usersList = getUsersFromLocal();
+let usersList = [];
+let postList=[];
+    getUserDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users');
+//let postList = getDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users/1/posts');
 
-printUsersHeader(usersList);
+
+
+
+//console.log(postList);
+
+
+//usersList = getUsersFromLocal();
+//printUsersHeader(usersList);
 
 //************************************************************************
-function printUsersHeader(usersData)
+function printUsersHeaderHtml(usersList)
 {
-    for (const user of usersData)
+    let htmlText = headerHtmlText('');
+    for (const user of usersList)
     {
-        document.write(
+
+        htmlText +=
             '<div class="output_user_header_block">' + user.id + '. ' + user.name +
             '<input type="button" class="button_user_detail" '+
-            //
             'onclick="createUserDetailsHtml(' + user.id + ')" value=&#10150>' +
-            '</div>');
+            '</div>';
     }
-
+    htmlText += footerHtmlText();
+    document.write(htmlText);
 }
 
-function getUsersFromJsonPlaceholder(path)
+function getUserDataFromJsonPlaceholder(path)
 {
-    let users = [];
-    fetch (path)
-        .then((response) => response.json())
-        .then((user) => (users.push(user)));
-    return users;
+    fetch(path)
+        .then((response) => (response.json()))
+        .then ((data) => {
+            for (const datum of data) {
+                usersList.push(datum);
+            }
+            printUsersHeaderHtml(usersList);
+        });
+}
+
+function getPostDataFromJsonPlaceholder(path)
+{
+   postList=[];
+    fetch(path)
+        .then((response) => (response.json()))
+        .then ((data) => {
+            for (const datum of data) {
+                postList.push(datum);
+            }
+
+        });
 }
 
 function getUsersFromLocal() {
@@ -268,47 +295,63 @@ function getUsersFromLocal() {
 
 function createUserDetailsHtml(userId)
 {
-    //let userData = JSON.parse(user);
+    const user = usersList[userId];
+    const classField = "output_user_record_block-user_data_field";
+    const classHeader = "output_user_record_block-user_data_header";
+    const userDataFieldHtml = getStructToHtml(usersList[userId], [], classField, classHeader);
 
-    let user = usersList[userId];
-    let userDataFieldHtml = getStructToHtml(usersList[userId], []);
-
-    let detailsWindow = window.open();
-    let htmlText = '<!doctype html>\n' +
-        '<html>\n' +
-        '<head>\n' +
-        '    <meta charset="UTF-8">\n' +
-        '    <meta name="viewport"\n' +
-        '          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">\n' +
-        '    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n' +
-        '    <title>' + user.name + '</title>\n' +
-        '    <link rel="stylesheet" href="styles/main.css">\n' +
-        '</head>\n' +
-        '<body class="page">\n' +
-        '<div class="output_user_record_block-user_data_header"> Details of ' + user.name + '</div>' +
-        userDataFieldHtml.join("") +
-        '</body>' +
-        '</html>';
+    const detailsWindow = window.open();
+    const htmlText = '<!doctype html>\n' +
+            headerHtmlText (user.name) + '<div class="main_content">' +
+            '<div class=' + classHeader + '> Details of ' + user.name + '</div>' +
+            userDataFieldHtml.join("") +
+            '<div class="main_content"> <input type="button" class="button_user_detail" ' +
+            'onclick="viewPostHeader(' + user.id + ')" value="view posts header">' + '</div>' +
+            '</div>' +
+        footerHtmlText();
     detailsWindow.document.write(htmlText);
-
 }
 
-function getStructToHtml(obj, arrayOfDataField) {
+function viewPostHeader(userId)
+{
+    getPostDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users/' + userId + '/posts');
+}
+
+function getStructToHtml(obj, arrayOfDataField, classField, classHeader) {
     let divCode="";
     for (const prop of Object.getOwnPropertyNames(obj))
     {
 
         if (typeof (obj[prop]) === "string" || typeof (obj[prop]) === "number")
         {
-            divCode = '<div class="output_user_record_block-user_data_field">' + prop + ' - ' + obj[prop] + '</div>';
+            divCode = '<div class=' + classField + '>' + '<span class="output_user_record_block-user_data_header_font">' + prop + ':</span> ' + obj[prop] + '</div>';
             arrayOfDataField.push(divCode);
-            console.log(divCode);
         }
        else
         {
-            arrayOfDataField.push('<div class="output_user_record_block-user_data_header">' + prop + '</div>');
-            getStructToHtml(obj[prop], arrayOfDataField);
+            arrayOfDataField.push('<div class=' + classHeader + '> ' + '<span class="output_user_record_block-user_data_header_font">' + prop + ':</span> ');
+            getStructToHtml(obj[prop], arrayOfDataField, classField, classHeader);
+            arrayOfDataField.push('</div>');
         }
     }
     return arrayOfDataField;
 }
+
+
+function headerHtmlText(title) {
+    return '<html lang="eu">\n' +
+        '<head>\n' +
+        '    <meta charset="UTF-8">\n' +
+        '    <meta name="viewport"\n' +
+        '          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">\n' +
+        '    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n' +
+        '    <title>' + title + '</title>\n' +
+        '    <link rel="stylesheet" href="styles/main.css">\n' +
+        '</head>\n' +
+        '<body class="page">\n';
+}
+
+function footerHtmlText() {
+    return '<div> miniProject of JS by Sviehaper (c) </div></body> </html>';
+}
+

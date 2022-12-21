@@ -4,14 +4,11 @@
     background-color: #556655;
     font-size: 24px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: space-around;
 }
-
-
-
-
-
 
 .user_geo .user_address .user_profile{
     color: #aaaa00;

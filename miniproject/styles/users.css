@@ -1,23 +1,34 @@
+.main_content{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
 .output_user_header_block{
     border: medium solid bisque;
     border-bottom-left-radius: 20%;
     border-top-right-radius: 20%;
     border-bottom-right-radius: 20%;
-    width: 30vw;
+    width: 35vw;
     margin: 5px 0px 5px 0px ;
     padding: 10px 30px 10px 30px ;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 
     background: linear-gradient(-45deg, #556655, bisque);
 }
 
 .button_user_detail {
+    margin: 15px 0px 15px 0px ;
+    width: 90%;
     font-size: 28px;
-    border-radius: 45%;
+    border-radius: 15%;
     background-color: #556655;
     color: bisque;
     opacity: 1;
@@ -25,6 +36,7 @@
 
 .button_user_detail:hover {
     opacity: 0.6;
+    background-color: #223322;
 }
 
 
@@ -46,19 +58,22 @@
     font-size: 18px;
 }
 .output_user_record_block-user_data_header{
-    width: 55%;
-    margin: 2px 2px 2px 32px ;
+    width: 60%;
+    margin: 2px 2px 2px 15px ;
     padding: 0px 0px 0px 5px ;
     border-left-style: double;
     border-left-width: medium;
-    border-bottom-style: double;
-    border-bottom-width: medium;
+    border-top-style: double;
+    border-top-width: medium;
     display: flex;
     justify-content: left;
     align-items: self-start;
     flex-direction: column;
     background-color: #889988;
 
-    font-style: oblique;
     font-size: 24px;
+}
+
+.output_user_record_block-user_data_header_font{
+    font-weight: bolder;
 }
