@@ -37,7 +37,7 @@
     display: flex;
     justify-content: left;
     align-items: self-start;
-    flex-direction: column;
+    flex-direction: row;
 
     background: bisque;
 
@@ -64,6 +64,7 @@
 
 .output_user_record_block-user_data_header_font{
     font-weight: bolder;
+    margin-right: 5px;
 }
 
 

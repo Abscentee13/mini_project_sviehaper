@@ -1,4 +1,8 @@
 
+
+
+
+
 function getStructToHtml(obj, arrayOfDataField, classField, classHeader) {
     let divCode="";
     for (const prop of Object.getOwnPropertyNames(obj))
@@ -6,7 +10,7 @@ function getStructToHtml(obj, arrayOfDataField, classField, classHeader) {
 
         if (typeof (obj[prop]) === "string" || typeof (obj[prop]) === "number")
         {
-            divCode = '<div class=' + classField + '>' + '<span class="output_user_record_block-user_data_header_font">' + prop + ':</span> ' + obj[prop] + '</div>';
+            divCode = '<div class=' + classField + '>' + '<span class="output_user_record_block-user_data_header_font">' + prop + ': </span> ' + obj[prop] + '</div>';
             arrayOfDataField.push(divCode);
         }
         else
@@ -31,8 +35,7 @@ function headerHtmlText(title, script) {
         '    <link rel="stylesheet" href="styles/main.css">\n' +
         '</head>\n' +
         '<body class="page">' +
-        '<script src="scripts/user-details.js">        </script> ' +
-        '<script  src="scripts/lib.js">        </script> ';
+        script;
 }
 
 function footerHtmlText() {

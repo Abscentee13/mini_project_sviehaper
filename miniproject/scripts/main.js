@@ -6,18 +6,15 @@ getUserDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users');
 
 function getUserDataFromJsonPlaceholder(path)
 {
-    //usersList = [];
     fetch(path)
         .then((response) => (response.json()))
         .then ((data) => {
             for (const datum of data) {
                 usersList.push(datum);
             }
-            console.log(usersList.length);
             printUsersHeaderHtml(usersList);
         });
 }
-
 
 function printUsersHeaderHtml(usersHeadersList)
 {
@@ -42,11 +39,13 @@ function createUserDetailsHtml(userId)
     const classField = "output_user_record_block-user_data_field";
     const classHeader = "output_user_record_block-user_data_header";
     const userDataFieldHtml = getStructToHtml(usersList[userId], [], classField, classHeader);
-
-    const detailsWindow = window.open('user-details.html');
+    const scripts = '<script src="scripts/user-details.js">        </script> ' +
+                    '<script  src="scripts/lib.js">        </script> ';
+    const detailsWindow = window.open('user-details.html?username=' + user.name);  //something wrong
     const htmlText = '<!doctype html>' +
-        headerHtmlText (user.name, 'user-details') + '<div class="main_content">' +
-        '<div class=' + classHeader + '> <span class="output_user_record_block-user_data_header_font"> Details of ' + user.name + '</span></div>' +
+        headerHtmlText (user.name, scripts) + '<div class="main_content">' +
+        '<div class=' + classHeader + '> ' +
+        '<span class="output_user_record_block-user_data_header_font"> Details of ' + user.name + '</span></div>' +
         userDataFieldHtml.join("") +
         '<div class="main_content"> <input type="button" class="button_detail" ' +
         'onclick="viewPostHeader(' + user.id + ')" value="view posts header">' + '</div>' +
