@@ -1,5 +1,8 @@
 
 @import "users.css";
+@import "posts.css";
+@import "lib.css";
+
 .page{
     background-color: #556655;
     font-size: 24px;
@@ -10,66 +13,11 @@
     justify-content: space-around;
 }
 
-.user_geo .user_address .user_profile{
-    color: #aaaa00;
-}
-
-.user_id{
-    flex-direction: row;
-        color: #000000;
-}
-.user_name{
-    flex-direction: row;
-    color: #aa0000;
-}
-.user_login{
-    flex-direction: row;
-    color: #00aa00;
-}
-
-.user_email{
-    flex-direction: row;
-    color: #aaaa00;
-}
-
-.user_street{
-    flex-direction: row;
-    color: #556655;
-}
-.user_suite{
-    flex-direction: row;
-    color: #aa0000;
-}
-.user_city{
-    flex-direction: row;
-    color: #00aa00;
-}
-
-.user_zipcode{
-    flex-direction: row;
-    color: #aaaa00;
-}
-
-
-.user_lat{
-    flex-direction: row;
-    color: #00aa00;
-}
-
-.user_lng{
-    flex-direction: row;
-    color: #aaaa00;
-}
-
-.data_field_header{
-    color: #aaaa00;
-    font-size: 20px;
-}
-
-.data_field_text{
-    color: #222222;
-    font-style: oblique;
-}
-.data_field_content{
-    font-style: inherit;
+#footer{
+    font-size: 16px;
+    color: bisque;
+    margin-top: 20px;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
 }

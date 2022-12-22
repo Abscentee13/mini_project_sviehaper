@@ -1,0 +1,33 @@
+.post_content{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.output_post_header_block{
+    border: medium solid bisque;
+    border-bottom-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+    width: 15%;
+    height: 45%;
+    margin: 5px 5px 5px 5px ;
+    padding: 5px 5px 5px 5px ;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+
+    font-size: 18px;
+    background: linear-gradient(-45deg, #556655, #ccddcc);
+}
+
+.output_post_title_block{
+    overflow: hidden;
+}

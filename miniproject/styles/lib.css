@@ -1,0 +1,15 @@
+.button_detail {
+
+    margin: 15px 0px 15px 0px ;
+    width: 90%;
+    font-size: 28px;
+    border-radius: 15%;
+    background-color: #556655;
+    color: bisque;
+    opacity: 1;
+}
+
+.button_detail:hover {
+    opacity: 0.6;
+    background-color: #223322;
+}

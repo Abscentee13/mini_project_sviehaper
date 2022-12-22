@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f9a373e-c838-4331-94db-dd29b9abda7c" name="Changes" comment="Continue 3">
+    <list default="true" id="8f9a373e-c838-4331-94db-dd29b9abda7c" name="Changes" comment="Continue 4">
+      <change afterPath="$PROJECT_DIR$/miniproject/scripts/lib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniproject/scripts/user-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniproject/styles/lib.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniproject/styles/posts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniproject/user-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniproject/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/scripts/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniproject/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/styles/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniproject/styles/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/styles/users.css" afterDir="false" />
@@ -25,6 +30,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,19 +43,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dream Store/IdeaProjects/mini_project_sviehaper/miniproject&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Dream Store/IdeaProjects/JS_HomeWork",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Dream Store\IdeaProjects\mini_project_sviehaper\miniproject" />
@@ -69,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671528391717</updated>
       <workItem from="1671528393553" duration="31382000" />
-      <workItem from="1671625461118" duration="12035000" />
+      <workItem from="1671625461118" duration="36414000" />
     </task>
     <task id="LOCAL-00001" summary="Continue 1">
       <created>1671554873290</created>
@@ -99,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671566226209</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Continue 4">
+      <created>1671655004629</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671655004629</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +134,7 @@
     <MESSAGE value="Continue 1" />
     <MESSAGE value="Continue 2" />
     <MESSAGE value="Continue 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continue 3" />
+    <MESSAGE value="Continue 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continue 4" />
   </component>
 </project>
