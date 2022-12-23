@@ -1,7 +1,7 @@
 
-let usersList = [];
+//let usersList = [];
 
-getUserDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users');
+getUserDataFromJsonPlaceholder(USERS_URL);
 
 
 function getUserDataFromJsonPlaceholder(path)
@@ -39,9 +39,10 @@ function createUserDetailsHtml(userId)
     const classField = "output_user_record_block-user_data_field";
     const classHeader = "output_user_record_block-user_data_header";
     const userDataFieldHtml = getStructToHtml(usersList[userId], [], classField, classHeader);
-    const scripts = '<script src="scripts/user-details.js">        </script> ' +
+    const scripts = '<script  src="scripts/global_var.js">        </script>' +
+                    '<script src="scripts/user-details.js">        </script> ' +
                     '<script  src="scripts/lib.js">        </script> ';
-    const detailsWindow = window.open('user-details.html?username=' + user.name);  //something wrong
+    const detailsWindow = window.open('user-details.html');  //something wrong
     const htmlText = '<!doctype html>' +
         headerHtmlText (user.name, scripts) + '<div class="main_content">' +
         '<div class=' + classHeader + '> ' +

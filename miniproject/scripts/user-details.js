@@ -1,6 +1,6 @@
 
-let postList=[];
-let commentsList=[];
+// let postList=[];
+// let commentsList=[];
 let postAuthor='';
 
 function viewPostHeader(userId)
@@ -67,7 +67,8 @@ function createPostDetailsHtml(postId)
     const classField = "output_post_record_block-post_data_field";
     const classHeader = "output_post_record_block-post_data_header";
     const postDataFieldHtml = getStructToHtml(post, [], classField, classHeader);
-    const scripts = '<script src="scripts/post-details.js">        </script> ' +
+    const scripts = '<script  src="scripts/global_var.js">        </script>' +
+                    '<script src="scripts/post-details.js">        </script> ' +
                     '<script  src="scripts/lib.js" onload = "viewComments(' + post.id + ')">        </script> ';
     const detailsWindow = window.open('post-details.html');  //something wrong
     const htmlText = '<!doctype html>' +
