@@ -8,7 +8,6 @@ function viewComments(postId) {
         .then((data) => {
             for (const datum of data) {
                 commentsList.push(datum);
-                console.log(datum);
             }
             printCommentsHtml(commentsList);
         });
@@ -18,7 +17,7 @@ function viewComments(postId) {
 function printCommentsHtml(commentsList){
 
     const classField = "output_comment_block_field";
-    const classHeader = "output_comment_block_field_header";
+    const classHeader = "output_comment_block_header";
     const commentsDataFieldHtml = getStructToHtml(commentsList, [], classField, classHeader);
 
     let footer = document.getElementById('footer');
@@ -28,14 +27,8 @@ function printCommentsHtml(commentsList){
     document.body.insertBefore( commentContentDiv, footer);
 
     let htmlText = '';
-
         htmlText +=
-            '<div class="output_post_header_block">' +
-          //  '<div class="output_post_title_block">' +
-            commentsDataFieldHtml.join('') +
-       // '</div>' +
-        '</div>';
-    console.log(htmlText);
+            commentsDataFieldHtml.join('');
     let element = document.getElementById("comment_content");
     element.innerHTML = htmlText;
 }

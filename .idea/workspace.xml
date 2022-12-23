@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f9a373e-c838-4331-94db-dd29b9abda7c" name="Changes" comment="Continue 5">
-      <change afterPath="$PROJECT_DIR$/miniproject/post-details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniproject/scripts/post-details.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject/scripts/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/scripts/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/scripts/post-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/scripts/post-details.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniproject/scripts/user-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/scripts/user-details.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniproject/styles/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/styles/posts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniproject/styles/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/styles/users.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671528391717</updated>
       <workItem from="1671528393553" duration="31382000" />
-      <workItem from="1671625461118" duration="49238000" />
+      <workItem from="1671625461118" duration="51291000" />
     </task>
     <task id="LOCAL-00001" summary="Continue 1">
       <created>1671554873290</created>
@@ -118,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671734522036</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Continue 5">
+      <created>1671747478895</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671747478895</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

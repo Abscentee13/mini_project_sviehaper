@@ -75,7 +75,6 @@ function createPostDetailsHtml(postId)
                         '<div class=' + classHeader + '>' +
                         '<span class="output_post_record_block-post_data_header_font"> Details of post '+ postAuthor + '</span></div>' +
                         postDataFieldHtml.join("") +
-                        '<div class="main_post_content"> ' + post.title + '</div>' +
                         '</div>' +
                         footerHtmlText();
     detailsWindow.document.write(htmlText);
