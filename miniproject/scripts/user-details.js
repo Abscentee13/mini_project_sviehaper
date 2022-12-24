@@ -5,13 +5,17 @@ let postAuthor='';
 
 function viewPostHeader(userId)
 {
+    //TO DO use global    usersList
     fetch('https://jsonplaceholder.typicode.com/users')
         .then((response) => (response.json()))
         .then ((data) => {
-            for (const datum of data) {
-                if (datum.id === userId)  postAuthor = datum.name;
+
+            for (const user of usersList) {
+                if (user.id === userId)  postAuthor = user.name;
+                console.log(userId + user.name);
             }
         });
+    console.log(usersList );
     getPostDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users/' + userId + '/posts');
 }
 

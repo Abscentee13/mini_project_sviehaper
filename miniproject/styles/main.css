@@ -21,3 +21,12 @@
     display: flex;
     justify-content: center;
 }
+
+#header{
+    font-size: 24px;
+    color: bisque;
+    margin-bottom: 20px;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+}

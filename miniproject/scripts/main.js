@@ -25,7 +25,7 @@ function printUsersHeaderHtml(usersHeadersList)
         htmlText +=
             '<div class="output_user_header_block">' + user.id + '. ' + user.name +
             '<input type="button" class="button_detail" '+
-            'onclick="createUserDetailsHtml('+ user.id +')" value=&#10150> ' +
+            'onclick="createUserDetailsHtml('+ (user.id - 1)+')" value=&#10150> ' +
             '</div>';
     }
     htmlText += footerHtmlText();
