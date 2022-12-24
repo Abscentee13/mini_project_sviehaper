@@ -10,12 +10,12 @@ function viewPostHeader(userId)
         .then((response) => (response.json()))
         .then ((data) => {
 
-            for (const user of usersList) {
+            for (const user of data) {
                 if (user.id === userId)  postAuthor = user.name;
                 console.log(userId + user.name);
             }
         });
-    console.log(usersList );
+   // console.log(usersList );
     getPostDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users/' + userId + '/posts');
 }
 

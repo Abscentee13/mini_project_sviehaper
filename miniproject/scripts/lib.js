@@ -40,4 +40,5 @@ function headerHtmlText(title, script) {
 
 function footerHtmlText() {
     return '<div id="footer"> miniProject of JS by Sviehaper (c) </div></body> </html>';
+
 }
