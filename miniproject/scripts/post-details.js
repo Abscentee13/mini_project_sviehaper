@@ -28,7 +28,7 @@ function printCommentsHtml(commentsList){
 
     let htmlText = '';
         htmlText +=
-            commentsDataFieldHtml.join('');
+                    commentsDataFieldHtml.join('');
     let element = document.getElementById("comment_content");
     element.innerHTML = htmlText;
 }

@@ -1,22 +1,17 @@
-
-// let postList=[];
-// let commentsList=[];
 let postAuthor='';
 
 function viewPostHeader(userId)
 {
     //TO DO use global    usersList
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch(USERS_URL())
         .then((response) => (response.json()))
         .then ((data) => {
 
             for (const user of data) {
                 if (user.id === userId)  postAuthor = user.name;
-                console.log(userId + user.name);
             }
         });
-   // console.log(usersList );
-    getPostDataFromJsonPlaceholder('https://jsonplaceholder.typicode.com/users/' + userId + '/posts');
+    getPostDataFromJsonPlaceholder(USERS_URL() + '/' + userId + '/posts');
 }
 
 function getPostDataFromJsonPlaceholder(path)
@@ -47,22 +42,27 @@ function printPostsHeaderHtml(postHeaderList)
         postHeaderDiv.id = "post_content";
     document.body.insertBefore( postHeaderDiv, footer);
 
-    let htmlText = '';
-
     for (const post of postHeaderList)
     {
-        htmlText +=
-                    '<div class="output_post_header_block">' +
-                    '<div class="output_post_title_block">' +
-                        post.id + '. ' + post.title +
-                    '</div>' +
-                    '<input type="button" class="button_detail"'+
-                    ' onclick="createPostDetailsHtml(' + post.id + ')" value=&#10150> ' +
-                    '</div>';
-    }
 
-    let element = document.getElementById("post_content");
-    element.innerHTML = htmlText;
+        let postHeaderDiv = document.createElement('div');
+        postHeaderDiv.className = 'output_post_header_block';
+
+        let postTitleDiv = document.createElement('div');
+        postTitleDiv.className = 'output_post_title_block';
+        postTitleDiv.innerText = post.id + '. ' + post.title;
+
+        let inputButton = document.createElement('input');
+        inputButton.className = 'button_detail';
+        inputButton.type = 'button';
+        inputButton.addEventListener('click', (event) => createPostDetailsHtml(post.id));
+        inputButton.value = '➦';
+
+        postHeaderDiv.append(postTitleDiv);
+        postHeaderDiv.append(inputButton);
+        let postBlock = document.getElementById("post_content");
+        postBlock.append(postHeaderDiv);
+    }
 }
 
 function createPostDetailsHtml(postId)
@@ -83,4 +83,5 @@ function createPostDetailsHtml(postId)
                         '</div>' +
                         footerHtmlText();
     detailsWindow.document.write(htmlText);
+    detailsWindow.location.hash = 'post-details.html';
 }
