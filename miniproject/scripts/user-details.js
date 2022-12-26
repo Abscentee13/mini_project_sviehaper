@@ -78,7 +78,7 @@ function createPostDetailsHtml(postId)
     const htmlText = '<!doctype html>' +
                         headerHtmlText ('Post '+ postAuthor, scripts) + '<div class="main_post_content">' +
                         '<div class=' + classHeader + '>' +
-                        '<span class="output_post_record_block-post_data_header_font"> Details of post '+ postAuthor + '</span></div>' +
+                        '<span class="output_post_record_block-post_data_header_font"> Подробиці допису '+ postAuthor + '</span></div>' +
                         postDataFieldHtml.join("") +
                         '</div>' +
                         footerHtmlText();

@@ -53,10 +53,10 @@ function createUserDetailsHtml(userId)
     const htmlText = '<!doctype html>' +
         headerHtmlText (user.name, scripts) + '<div class="main_content">' +
         '<div class=' + classHeader + '> ' +
-        '<span class="output_user_record_block-user_data_header_font"> Details of ' + user.name + '</span></div>' +
+        '<span class="output_user_record_block-user_data_header_font"> Детальна інформація користувача ' + user.name + '</span></div>' +
         userDataFieldHtml.join("") +
         '<div class="main_content"> <input type="button" class="button_detail" ' +
-        'onclick="viewPostHeader(' + user.id + ')" value="view posts header">' + '</div>' +
+        'onclick="viewPostHeader(' + user.id + ')" value="показати заголовки дописів">' + '</div>' +
         '</div>' +
         footerHtmlText();
 

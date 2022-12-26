@@ -40,7 +40,7 @@ function headerHtmlText(title, script) {
         '</head>\n' +
         '<body class="page">' +
         script +
-        '<div id="header">jsonplaceholder.typicode.com</div>';
+        '<div id="header">Інформація із сайту jsonplaceholder.typicode.com</div>';
 }
 
 function footerHtmlText() {
@@ -73,7 +73,7 @@ const ukrainePropertyName = new Map([
     ['lat', 'Широта'],
     ['lng', 'Довгота'],
     ['body', 'Вміст'],
-    ['userId', 'Номер'],
+    ['userId', 'Номер користувача'],
     ['title', 'Заголовок']
 
 ]);
